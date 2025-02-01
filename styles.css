@@ -1,0 +1,223 @@
+/* this is just basic styling, such as background, text colour, etc. */
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: url('./light-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+
+    color: #333;
+    text-align: center;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    
+}
+
+/* this change the background image when user use/swtich to a dark mode */
+
+.dark-mode {
+
+    background: url('./dark-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+
+}
+
+/* main container section */
+.container {
+    width: 50%;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.9); 
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out;
+}
+
+/* dark mode container section */
+.dark-mode .container {
+    background: rgba(40, 40, 40, 0.9);
+}
+
+
+h1 {
+    font-size: 24px;
+}
+
+/* tasks enter section */
+.task-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.task-input input, 
+.task-input select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* buttons sectnion */
+.add-btn {
+    background: #6200ea;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.add-btn:hover {
+    background: #3700b3;
+}
+
+/* task list section*/
+.task-container {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #f9f9f9;
+    margin-top: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out;
+}
+
+/* dark mode task items */
+.dark-mode .task-item {
+    background: #333;
+    color: white;
+}
+
+/* completed task */
+.task-item.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* buttons */
+.task-item button {
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.complete-btn {
+    background: #34c759;
+    color: white;
+}
+
+.delete-btn {
+    background: #ff3b30;
+    color: white;
+}
+
+/* filters section */
+.filter-buttons {
+    margin-top: 10px;
+}
+
+.filter-buttons button {
+    padding: 8px 12px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #6200ea;
+    color: white;
+}
+
+.filter-buttons button:hover {
+    background: #3700b3;
+}
+
+
+.task-summary {
+    margin-top: 20px;
+
+}
+
+
+
+/* mobile screens section */
+@media screen and  (max-width: 768px) {
+
+    .container {
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    @media (min-width: 450px) {
+        .container {
+            width: 60%;
+            min-width: 400px; /* larger screens get more space */
+        }
+
+    }
+    
+    
+
+    .task-input {
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .task-input input, 
+    .task-input select, 
+    .task-input button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .filter-buttons button {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .task-input {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .task-input input, 
+    .task-input select, 
+    .task-input button {
+        width: 100%;
+        max-width: 350px;
+        text-align: center;
+    }
+
+
+    .filter-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .filter-buttons button {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    
+}
+
